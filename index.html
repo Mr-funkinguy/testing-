@@ -44,17 +44,14 @@ catch(error){
 }
 	  
 function uploadedAudioPlay(audioFile) {
-	song = audioFile;    
-
-    	 song.play();   
-
-	
 	uploadLoading = false;
 
-	song.pause();
-	
+	if (song.isPlaying()) {
+		song.pause();
+	}
+
 	song = audioFile;
-	
+	song.loop();
 }
 
 function setup() {
