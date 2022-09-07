@@ -40,9 +40,8 @@ function uploadedAudioPlay(audioFile) {
 
 uploadLoading = false;
 
-if (audio.isPlaying()) {
-  audio.pause();
-}
+ audio.pause();
+
 	
 audio = audioFile;
 audio.loop();
