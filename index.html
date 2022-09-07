@@ -33,9 +33,9 @@ function uploaded(file) {
 }
 	  
 function uploadedAudioPlay(audioFile) {
-
-	if(audioFile.isLoaded()) {
-    	 song = audioFile;     
+	song = audioFile;    
+	if(song.isLoaded()) {
+    	 song.play();   
   	} 
 	
 	uploadLoading = false;
@@ -58,10 +58,14 @@ function setup() {
   colorMode(HSB);
   buttton = createButton('Toggle Play');
   buttton.mousePressed(toggleSong);
+if(song.isLoaded()) {
   song.play(); 
-   if (song.isPlaying()) {
-	  song.pause; 
-   }
+}
+if(song.isLoaded()) {
+  	 if (song.isPlaying()) {
+	 	 song.pause; 
+   	}
+}
   fft = new p5.FFT(0.9, 128);
   space_between_lines = width / 128;
 }
