@@ -33,7 +33,7 @@ function uploaded(file) {
 }
 
 function preload() {
-  song = loadSound('a.mp3'); 
+  song = audioFile;
 }
 
 function uploadedAudioPlay(audioFile) {
@@ -61,6 +61,9 @@ function setup() {
   buttton = createButton('Toggle Play');
   buttton.mousePressed(toggleSong);
   song.play();  
+   if (song.isPlaying()) {
+	  song.pause; 
+   }
   fft = new p5.FFT(0.9, 128);
   space_between_lines = width / 128;
 }
