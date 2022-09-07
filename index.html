@@ -34,7 +34,7 @@ function uploaded(file) {
 	  
 function preload() {
 	audio = loadSound(file.data);
-	
+	loadSound(file.data);
 }
 	  
 function uploadedAudioPlay(audioFile) {
@@ -44,7 +44,7 @@ function uploadedAudioPlay(audioFile) {
 
 		song.pause();
 	
-
+	loadSound(file.data);
 	song = audioFile;
 	
 }
