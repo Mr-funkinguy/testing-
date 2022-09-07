@@ -30,13 +30,17 @@ function toggleSong() {
 
 function uploaded(file) {
 	uploadLoading = true;
-	//uploadedAudio = loadSound(file.data, uploadedAudioPlay);
-	uploadedAudio = loadSound(file.data, load);
+	uploadedAudio = loadSound(file.data, uploadedAudioPlay);
 	
 }
 	  
-function load(file) {
-    song = loadSound(file.data, uploadedAudioPlay);
+function preload(audioFile) {
+try{
+   song = loadSound('a.mp3');
+}
+catch(error){
+  song = audioFile;
+}
 }
 	  
 function uploadedAudioPlay(audioFile) {
@@ -64,7 +68,6 @@ function setup() {
   colorMode(HSB);
   buttton = createButton('Toggle Play');
   buttton.mousePressed(toggleSong);
-  preload();
   song.play(); 
   if (song.isPlaying()) {
 	song.pause; 
