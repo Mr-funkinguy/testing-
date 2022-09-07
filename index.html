@@ -64,6 +64,7 @@ function setup() {
   colorMode(HSB);
   buttton = createButton('Toggle Play');
   buttton.mousePressed(toggleSong);
+  preload();
   song.play(); 
   if (song.isPlaying()) {
 	song.pause; 
