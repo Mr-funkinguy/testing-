@@ -27,11 +27,15 @@ function toggleSong() {
   }
 }
 
-function preload(file) {
+function uploaded(file) {
 	uploadLoading = true;
 	uploadedAudio = loadSound(file.data, uploadedAudioPlay);
 }
-
+	  
+function preload() {
+	audio = loadSound(file.data);
+	
+}
 	  
 function uploadedAudioPlay(audioFile) {
 
