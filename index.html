@@ -36,7 +36,7 @@ function uploaded(file) {
 	  
 function preload(audioFile) {
 try{
-   song = loadSound('a.mp3');
+   song = loadSound('ex.mp3');
 }
 catch(error){
   song = audioFile;
@@ -46,9 +46,7 @@ catch(error){
 function uploadedAudioPlay(audioFile) {
 	uploadLoading = false;
 
-	if (song.isPlaying()) {
-		song.pause();
-	}
+	song.pause();
 
 	song = audioFile;
 	song.loop();
