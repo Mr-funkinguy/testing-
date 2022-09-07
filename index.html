@@ -33,13 +33,13 @@ function uploaded(file) {
 }
 	  
 function preload() {
-	song = loadSound(file.data);
+	var audio = file.data;
+	audioFile = loadSound(audio);
 }
 	  
 function uploadedAudioPlay(audioFile) {
 
 	uploadLoading = false;
-	preload();
 
 	song.pause();
 	
