@@ -30,9 +30,13 @@ function toggleSong() {
 function uploaded(file) {
 	uploadLoading = true;
 	uploadedAudio = loadSound(file.data, uploadedAudioPlay);
-	song = loadSound(file.data);
 }
-	  
+	
+function preload() {
+     if(song.isLoaded()) {
+    	song = loadSound(file.data);     
+     }     
+}
 	  
 function uploadedAudioPlay(audioFile) {
 
