@@ -38,11 +38,14 @@ function preload() {
 
 function uploadedAudioPlay(audioFile) {
 
-uploadLoading = false;
+	uploadLoading = false;
 
- song.pause();
+	if (song.isPlaying()) {
+		song.pause();
+	}
 
- song.loop();
+	song = audioFile;
+	song.loop();
 }
 
 function setup() {
