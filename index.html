@@ -34,7 +34,7 @@ function uploaded(file) {
 	
 function preload() {
      if(song.isLoaded()) {
-    	song = loadSound(file.data);     
+    	song = audioFile;     
      }     
 }
 	  
@@ -60,7 +60,10 @@ function setup() {
   colorMode(HSB);
   buttton = createButton('Toggle Play');
   buttton.mousePressed(toggleSong);
-  song.play();  
+  song.play(); 
+   if(song.isLoaded()) {
+    	song = audioFile;     
+   } 
    if (song.isPlaying()) {
 	  song.pause; 
    }
