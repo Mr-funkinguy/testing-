@@ -49,9 +49,17 @@ audio.loop();
 
 function setup() {
 
-  uploadBtn.addClass("upload-btn");
+	createCanvas(windowWidth, windowHeight);
 
-  createCanvas(600, 600);
+	toggleBtn = createButton("Play / Pause");
+
+	uploadBtn = createFileInput(uploaded);
+
+	uploadBtn.addClass("upload-btn");
+
+	toggleBtn.addClass("toggle-btn");
+	
+	toggleBtn.mousePressed(toggleAudio);  createCanvas(600, 600);
   angleMode(DEGREES); // Change the mode to DEGREES
   colorMode(HSB);
   buttton = createButton('Toggle Play');
