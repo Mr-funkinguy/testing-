@@ -68,7 +68,7 @@ function setup() {
 	song.pause; 
    }
 
-  fft = new p5.FFT(0.9, 128);
+  fft = new p5.FFT(0.5, 128);
   space_between_lines = width / 128;
 }
 
@@ -81,7 +81,7 @@ function draw() {
   for (let i = 0; i < spectrum.length; i++) {
     fill(i,255,255);
     let amp = spectrum[i];
-    let y = map(amp, 0, 206, height, 0);
+    let y = map(amp, 0, 256, height, 0);
     rect(i * space_between_lines, y, space_between_lines, height - y);
   }
 }
