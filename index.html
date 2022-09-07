@@ -31,15 +31,13 @@ function uploaded(file) {
 	uploadLoading = true;
 	uploadedAudio = loadSound(file.data, uploadedAudioPlay);
 }
-	
-function preload() {
-     if(song.isLoaded()) {
-    	song = audioFile;     
-     }     
-}
 	  
 function uploadedAudioPlay(audioFile) {
 
+	if(audioFile.isLoaded()) {
+    	 song = audioFile;     
+  	} 
+	
 	uploadLoading = false;
 
 	song.pause();
@@ -61,9 +59,6 @@ function setup() {
   buttton = createButton('Toggle Play');
   buttton.mousePressed(toggleSong);
   song.play(); 
-   if(song.isLoaded()) {
-    	song = audioFile;     
-   } 
    if (song.isPlaying()) {
 	  song.pause; 
    }
