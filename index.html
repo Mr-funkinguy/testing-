@@ -34,17 +34,15 @@ function uploaded(file) {
 	  
 function preload() {
 	song = loadSound(file.data);
-	loadSound(file.data);
 }
 	  
 function uploadedAudioPlay(audioFile) {
 
 	uploadLoading = false;
+	preload();
 
-
-		song.pause();
+	song.pause();
 	
-	loadSound(file.data);
 	song = audioFile;
 	
 }
