@@ -30,6 +30,11 @@ function toggleSong() {
 function uploaded(file) {
 	uploadLoading = true;
 	uploadedAudio = loadSound(file.data, uploadedAudioPlay);
+	isLoaded()
+}
+	  
+function preload() {
+    song = loadSound();
 }
 	  
 function uploadedAudioPlay(audioFile) {
@@ -47,7 +52,7 @@ function uploadedAudioPlay(audioFile) {
 }
 
 function setup() {
-
+	isLoaded()
 	createCanvas(windowWidth, windowHeight);
 
 	uploadBtn = createFileInput(uploaded);
