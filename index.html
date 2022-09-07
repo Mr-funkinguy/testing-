@@ -29,11 +29,20 @@ function toggleSong() {
 
 function uploaded(file) {
 	uploadLoading = true;
-	uploadedAudio = loadSound(file.data, uploadedAudioPlay);
+	uploadedAudio = loadSound(file.data, preload);
+	//uploadedAudio = loadSound(file.data, uploadedAudioPlay);
 }
 
-  song = audioFile;
+function preload() {
+  uploadLoading = false;
 
+
+		song.pause();
+	
+
+	song = audioFile;
+}
+	  
 function uploadedAudioPlay(audioFile) {
 
 	uploadLoading = false;
@@ -43,7 +52,7 @@ function uploadedAudioPlay(audioFile) {
 	
 
 	song = audioFile;
-	song.loop();
+	
 }
 
 function setup() {
